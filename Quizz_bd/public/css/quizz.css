@@ -1,0 +1,546 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    height: 693px;
+}
+
+.connexion-container {
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.connexion-left {
+    background-color: #5E90AF;
+    height: 100%;
+    float: left;
+}
+
+.connexion-right {
+    height: 100%;
+    float: right;
+}
+
+.connexion-header {
+    width: 324px;
+    height: 84px;
+    position: relative;
+    left: 150px;
+    top: 64px;
+    /* background-color: red; */
+}
+
+.add-admin {
+    display: none;
+}
+
+.logo {
+    width: 56px;
+    height: 84px;
+    /* background-color: yellow; */
+    background-image: url(../images/logo-QuizzSA.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.app-title {
+    width: 219px;
+    height: 37px;
+    font-size: 16px;
+    position: relative;
+    left: 10px;
+    top: 25px;
+    color: white;
+}
+
+.connexion-description {
+    width: 493px;
+    height: 151px;
+    text-align: center;
+    font-size: 26px;
+    color: white;
+    position: relative;
+    left: 30px;
+    top: 100px;
+}
+
+.header-redirection {
+    width: 210px;
+    height: 28px;
+    position: relative;
+    top: 50px;
+    left: 70%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.connexion-form {
+    width: 562px;
+    height: 400px;
+    position: relative;
+    left: 90px;
+    top: 150px;
+}
+
+form {
+    position: relative;
+    top: 30px;
+}
+
+input {
+    color: #EBEBEB;
+}
+
+legend,
+label {
+    font-weight: bold;
+}
+
+.inscription-form {
+    position: relative;
+    width: 562px;
+    left: 90px;
+    top: 50px;
+}
+
+button {
+    background-color: #3addd6;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    position: relative;
+    left: 95px;
+    background: #3ADDD6;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* accueil */
+
+.accueil-left {
+    height: 100%;
+    background-color: #51BFD0;
+    width: 300px;
+    float: left;
+}
+
+.accueil-right {
+    height: 100%;
+    width: 100%;
+    background: #EBEBEB;
+    /* float: right; */
+}
+
+.accueil-logo,
+.accueil-right-header {
+    width: 100%;
+    height: 90px;
+}
+
+.accueil-right-header {
+    background-color: #FFFFFF;
+}
+
+#accueil-logo {
+    margin-left: 35px;
+    margin-top: 5px;
+}
+
+.accueil-avatar {
+    width: 100%;
+    height: 120px;
+    left: 0px;
+    background: #2F80ED;
+    mix-blend-mode: luminosity;
+}
+
+.accueil-avatar-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 10px;
+    float: left;
+}
+
+.accueil-user-informations {
+    position: relative;
+    top: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.accueil-icone {
+    width: 72px;
+    height: 480px;
+    /* Blue 1 */
+    background: #2F80ED;
+    mix-blend-mode: luminosity;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    float: left;
+}
+
+.items {
+    margin-top: 20px;
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.items:hover {
+    width: 97.8%;
+    border-left: 7px solid green;
+    background-color: #dfdfdf;
+    mix-blend-mode: luminosity;
+}
+
+.icone-navigation {
+    margin-top: 10px;
+    position: relative;
+    left: -15%;
+    float: left;
+}
+
+.accueil-navigation-text {
+    position: relative;
+    top: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type="submit"] {
+    /* float: right; */
+    color: white;
+    background-color: #3addd6;
+    /* margin-top: 10px; */
+    border-radius: 5px;
+    border: none;
+    width: 120px;
+    height: 35px;
+    position: relative;
+    left: 100px;
+}
+
+button {
+    float: right;
+    color: white;
+    background-color: #3addd6;
+    /* margin-top: 10px; */
+    border-radius: 5px;
+    border: none;
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.accueil-right-header>p {
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    top: 35px;
+    left: -10px;
+}
+
+.error-form {
+    color: #a94442;
+    font-size: 12px;
+}
+
+
+/* page joueur */
+
+.joueur-left {
+    height: 630px;
+    width: 25%;
+    /* background-color: #2F80ED; */
+}
+
+.joueur-informations {
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    background: #51BFD0;
+}
+
+.quizz-app-header {
+    height: 100px;
+    width: 100%;
+}
+
+.joueur-avatar {
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    background: #2F80ED;
+    mix-blend-mode: luminosity;
+}
+
+.joueur-avatar-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+    float: left;
+}
+
+.joueur-right {
+    /* background-color: #a94442; */
+    height: 630px;
+    width: 75%;
+}
+
+.joueur-header-right {
+    height: 200px;
+    width: 100%;
+    background: #F5F5F5;
+}
+
+.joueur-header-right-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+    position: relative;
+    top: 50px;
+}
+
+#header-right-button {
+    margin-top: -5px;
+}
+
+#decon {
+    float: right;
+}
+
+
+/* liste joueur */
+
+.list-joueur-container {
+    background: white;
+    margin: 10px;
+    margin-right: 20px;
+    /* float: right; */
+    margin-left: 23%;
+    width: 76%;
+    height: 300px;
+    /* margin-right: 10%; */
+}
+
+.list-joueur-header-text {
+    display: block;
+    width: 100%;
+}
+
+.list-joueur-header-text>p {
+    position: relative;
+    top: 5px;
+    margin-left: 5%;
+    /* left: 15%; */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+}
+
+a {
+    cursor: pointer;
+}
+
+.right {
+    /* float: right; */
+    float: left;
+    width: 60%;
+    /* height: 550px; */
+    background-color: white;
+    position: relative;
+    right: 3%;
+    left: 10%;
+    top: 1%;
+    border-radius: 10px 10px 0 0;
+}
+
+.liste-body {
+    /* border: 2px solid silver; */
+    border-radius: 10px;
+    width: 75%;
+    height: 75%;
+    position: relative;
+    left: 12%;
+}
+
+hr {
+    color: black;
+}
+
+
+/* table {
+    border-radius: 1em;
+    position: relative;
+    width: 100%;
+    font-size: 1em;
+    margin-left: 5%;
+}
+
+th,
+td {
+    color: grey;
+    padding: .25em 1em;
+    text-align: left
+}
+
+th {
+    font-weight: bold;
+} */
+
+.paginate-liste-zone {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    top: 17px;
+    border-radius: 0 0 10px 10px;
+}
+
+.paginate-liste-zone>button {
+    float: right;
+    position: relative;
+    right: 12%;
+    top: -12px;
+    /* margin-right: 40px; */
+    color: white;
+    background-color: #3addd6;
+    /* margin-top: 30px;
+    border-radius: 5px; */
+    border: none;
+    width: 120px;
+    height: 35px;
+}
+
+#prevv {
+    float: left;
+    margin-left: 10px;
+}
+
+.pagination_link {
+    cursor: pointer;
+    padding: 6px;
+    border: 1px solid #ccc;
+}
+
+
+/* creation question */
+
+
+/* .question-indication>h1 {
+    text-transform: uppercase;
+    color: #3addd6;
+    margin-left: 35px;
+}
+
+.creationQuestion-body {
+    border: solid 2px #3addd6;
+    border-radius: 1em;
+    width: 95%;
+    position: relative;
+    left: 15px;
+}
+
+.input-form-question {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#input-form-second-question {
+    margin-top: 10px;
+}
+
+#like-textarea {
+    width: 80%;
+    height: 90px;
+}
+
+.form-control-question {
+    background-color: #f0eeee;
+    border: none;
+    box-shadow: 1px 1px 1px #3addd6;
+    position: relative;
+    left: 10px;
+}
+
+#generated-input {
+    background-color: #f0eeee;
+    border: none;
+    box-shadow: 1px 1px 1px #3addd6;
+    position: relative;
+    left: 10px;
+    height: 40px;
+    width: 70%;
+}
+
+#number-specificies {
+    height: 35px;
+    width: 75px;
+    color: #51bfd0;
+}
+
+#selection-dropdown {
+    height: 40px;
+    width: 70%;
+}
+
+.input-form-question>a {
+    position: relative;
+    left: 89%;
+    top: -35px;
+}
+
+#fg {
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: relative;
+    top: -5px;
+    left: 10px;
+}
+
+#add-question,
+#fg {
+    background-image: url(../icones/ic-ajout-réponse.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.creationQuestion-body {
+    /* border: solid 2px #3addd6; */
+    border-radius: 1em;
+    width: 95%;
+    position: relative;
+    left: 15px;
+}

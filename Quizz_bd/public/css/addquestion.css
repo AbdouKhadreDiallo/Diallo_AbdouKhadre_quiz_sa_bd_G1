@@ -1,0 +1,155 @@
+.question-indication>h1 {
+    text-transform: uppercase;
+    color: #3addd6;
+    margin-left: 35px;
+}
+
+.creationQuestion-body {
+    border-radius: 1em;
+    width: 95%;
+    position: relative;
+    left: 15px;
+    margin-top: -10px;
+}
+
+.input-form-question {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#input-form-second-question {
+    margin-top: 10px;
+}
+
+#like-textarea {
+    width: 80%;
+    height: 90px;
+    color: black
+}
+
+input {
+    color: black;
+}
+
+.form-control-question {
+    background-color: #f0eeee;
+    border: none;
+    box-shadow: 1px 1px 1px #3addd6;
+    position: relative;
+    left: 10px;
+}
+
+#generated-input {
+    background-color: #f0eeee;
+    border: none;
+    box-shadow: 1px 1px 1px #3addd6;
+    position: relative;
+    left: 10px;
+    height: 40px;
+    width: 70%;
+}
+
+#number-specificies {
+    height: 35px;
+    width: 75px;
+    color: #51bfd0;
+}
+
+#selection-dropdown {
+    height: 40px;
+    width: 70%;
+}
+
+.input-form-question>a {
+    position: relative;
+    left: 89%;
+    top: -35px;
+}
+
+.selection-input {
+    display: block
+}
+
+#fg {
+    border: none;
+    /* display: inline-block; */
+    width: 35px;
+    height: 35px;
+    position: relative;
+    left: 92%;
+    top: -38px;
+}
+
+#add-question,
+#fg {
+    background-image: url(../icones/ic-ajout-réponse.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.input-form-question {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#input-form-question {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#generated-input {
+    /* background-color: #f0eeee; */
+    border: none;
+    box-shadow: 1px 1px 1px #3addd6;
+    position: relative;
+    left: 10px;
+    height: 30px;
+    width: 70%;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 15px;
+    top: 5px;
+}
+
+input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(1.5);
+    /* IE */
+    -moz-transform: scale(1.5);
+    /* FF */
+    -webkit-transform: scale(1.5);
+    /* Safari and Chrome */
+    -o-transform: scale(1.5);
+    /* Opera */
+    transform: scale(1.5);
+    padding: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px #3addd6;
+    position: relative;
+    left: 15px;
+}
+
+.btn-form-admin {
+    /* margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #3addd6;
+    padding: 10px;
+    color: white;
+    background-color: #3addd6;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    left: 83% */
+}
+
+.input-form-question>img {
+    position: relative;
+    left: 25px;
+    top: 0px;
+}

@@ -1,0 +1,78 @@
+.admin-connexion-left {
+    display: none;
+}
+
+.admin-header-redirection {
+    display: none;
+}
+
+.admin-inscription-form {
+    position: relative;
+    width: 562px;
+    left: -60%;
+    top: -40px;
+}
+
+.admin-connexion-right {
+    height: 550px;
+    width: 75%;
+}
+
+.admin-connexion-container {
+    height: 580px;
+    background: white;
+    margin: 10px;
+    margin-right: 20px;
+    /* float: right; */
+    margin-left: 23%;
+    width: 76%;
+    /* margin-right: 10%; */
+}
+
+input[type="text"] {
+    height: 30px;
+}
+
+.form-group {
+    margin-bottom: 7px;
+}
+
+.add-admin {
+    display: block;
+    width: 100%;
+}
+
+.add-admin>p {
+    position: relative;
+    top: 5px;
+    margin-left: 15%;
+    /* left: 15%; */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.form-control {
+    max-width: 75%;
+}
+
+hr {
+    color: black;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    position: relative;
+    left: 15px;
+    background: #3ADDD6;
+    color: white;
+    border-radius: 5px;
+}
+
+.delete {
+    cursor: pointer;
+    color: red
+}
