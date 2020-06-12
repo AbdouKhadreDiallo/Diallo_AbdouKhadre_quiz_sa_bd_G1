@@ -47,6 +47,18 @@
             color: red;
             font-size: 20px;
         }
+        .all{
+          width: 100%;
+        }
+        #questionListe{
+          width: 75%;
+          float: left;
+        }
+        #delete{
+          float: right;
+          position: relative;
+          top: 50%;
+        }
     </style>
 <?php
 if (isset($_POST["limit"], $_POST["start"])) {
@@ -58,33 +70,42 @@ $query = $conn-> query("SELECT * FROM question ORDER BY question_id ASC LIMIT ".
  while($row = $query->fetch())
  {
    ?>
-   <h3> <?php echo $row['Libelle']; ?> </h3>
-   <?php
-   foreach (explode(',', $row['reponsePossible']) as $key => $value){
-     if ($row['Type'] == 'texte') {
-       echo '<input type="text" value="',$row['bonneReponse'],'" class="text" disabled>';
+   <div class="all" id=" <?php echo $row['question_id'] ?> ">
+    <div id="questionListe">
+      <h3> <?php echo $row['Libelle']; ?> </h3>
+      <?php
+      foreach (explode(',', $row['reponsePossible']) as $key => $value){
+        if ($row['Type'] == 'texte') {
+          echo '<input type="text" value="',$row['bonneReponse'],'" class="text" disabled>';
 
-     }
-     elseif ($row['Type'] == 'multiple') {
-       if (in_array($value, explode(',', $row['bonneReponse']))) {
-         echo '<input type="checkbox" checked disabled> <h4 class="question-show">',$value,'</h4><br/>';
-       }
-       else {
-         echo '<input type="checkbox" disabled> <h4 class="question-show">',$value,'</h4><br/>';
-       }
+        }
+        elseif ($row['Type'] == 'multiple') {
+          if (in_array($value, explode(',', $row['bonneReponse']))) {
+            echo '<input type="checkbox" checked disabled> <h4 class="question-show">',$value,'</h4><br/>';
+          }
+          else {
+            echo '<input type="checkbox" disabled> <h4 class="question-show">',$value,'</h4><br/>';
+          }
 
-     }
-     elseif ($row['Type'] == 'simple') {
-       if ($value == $row['bonneReponse']) {
-         echo '<input type="radio" checked disabled> <h4 class="question-show">',$value,'</h4><br/>';
-       }
-       else {
-         echo '<input type="radio"  disabled> <h4 class="question-show">',$value,'</h4><br/>';
-       }
+        }
+        elseif ($row['Type'] == 'simple') {
+          if ($value == $row['bonneReponse']) {
+            echo '<input type="radio" checked disabled> <h4 class="question-show">',$value,'</h4><br/>';
+          }
+          else {
+            echo '<input type="radio"  disabled> <h4 class="question-show">',$value,'</h4><br/>';
+          }
 
-     }
-   }
-   echo "<hr>";
+        }
+      }
+      ?>
+      </div>
+     
+        <?php echo '<button id =',$row['question_id'],' class = "delete"> Delete </button>';   ?>
+     
+    </div>
+    <?php
+  //  echo "<hr>";
  }
 }
 

@@ -22,7 +22,10 @@ $(document).ready(function() {
                 } else if (response == "incorrect") {
                     $('#error-3').html('login ou mot de passe incorrecte');
                     // $('#pages').load(`index.php?page=${response}`);
-                } else if (response == "admin") {
+                }else if (response == "blocked") {
+                    $('#error-3').html("ce compte est temporairement indisponible, veuillez contacter l'administrateur");
+                }
+                 else if (response == "admin") {
                     $('#pages').load("pages/accueil.php");
                 } else {
                     $('#pages').load("pages/jeux.php");

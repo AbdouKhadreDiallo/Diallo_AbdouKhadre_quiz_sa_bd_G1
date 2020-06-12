@@ -7,7 +7,7 @@ function getConnexion()
      $objetPDO="";
      try
      {
-       $objetPDO =new PDO( 'mysql:host=localhost;dbname=quizz','root','');
+       $objetPDO =new PDO( 'mysql:host=localhost;port=3308;dbname=quizz','root','');
         $objetPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         return $objetPDO;

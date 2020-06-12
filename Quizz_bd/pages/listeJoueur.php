@@ -8,6 +8,9 @@ var_dump($totalPages);
     border:3px solid lavender;
     border-radius:3px;
 }
+.editMode{
+ border: 1px solid black;
+}
 
 /* Table header */
 .tr_header{
@@ -50,7 +53,6 @@ var_dump($totalPages);
                     <th>Prenom</th>
                     <th>nom</th>
                     <th>Score</th>
-                    <th>Statut</th>
                     <th>Action</th>
                     <th>Delete</th>
                 </tr>

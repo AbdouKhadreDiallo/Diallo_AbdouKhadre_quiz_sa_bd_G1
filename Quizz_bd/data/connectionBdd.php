@@ -1,6 +1,6 @@
 <?php
 session_start();
-  $bdd = new PDO('mysql:host=localhost;dbname=quizz','root','');
+  $bdd = new PDO('mysql:host=localhost;port=3308;dbname=quizz','root','');
 //   var_dump($bdd);
 //fonction de connexion
 function connexion($login,$password){
@@ -32,11 +32,11 @@ function deconection(){
     session_destroy();
 }
 
-function registerUser($prenom,$nom,$login,$profil,$password,$score = 0){
+function registerUser($prenom,$nom,$login,$profil,$password,$score = 0,$statut=1){
     global $bdd;
     $test = "";
-    $query = $bdd->prepare('INSERT INTO utilisateurs(id,prenom,nom,login,profil,password,score) VALUES (null,?,?,?,?,?,?)');
-    $result = $query -> execute(array($prenom,$nom,$login,$profil,$password,$score));
+    $query = $bdd->prepare('INSERT INTO utilisateurs(id,prenom,nom,login,profil,password,score,statut) VALUES (null,?,?,?,?,?,?,?)');
+    $result = $query -> execute(array($prenom,$nom,$login,$profil,$password,$score,$statut));
     if ($result==1) {
         if ($profil == 'admin') {
             $test = "admin";
@@ -47,6 +47,15 @@ function registerUser($prenom,$nom,$login,$profil,$password,$score = 0){
     }
     return $test;
 
+}
+
+function createQuestion($libelle, $nombrePoint,$questionType,$reponsePossible, $tabReponse){
+    global $conn;
+    $query = $conn->query ('INSERT INTO question (question_id,Libelle, score,Type,reponsePossible, bonneReponse) VALUES (?,?,?,?,?,?)');
+    $result = $query->execute(array(null,$libelle,$nombrePoint,$questionType,$reponsePossible,$tabReponse));
+    if ($result) {
+        echo "enregistre";
+    }
 }
 
 // tester si le login existe deja

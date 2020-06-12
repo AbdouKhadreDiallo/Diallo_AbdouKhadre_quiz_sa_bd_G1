@@ -41,4 +41,4 @@
 </html>
 <script src="./public/js/router.js"></script>
 <script src="./public/js/inscription.js"></script>
-<script src="./public/js/deconnexion.js"></script>
+<!-- <script src="./public/js/deconnexion.js"></script> -->

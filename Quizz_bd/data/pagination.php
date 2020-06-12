@@ -24,9 +24,15 @@ while($row = mysqli_fetch_array($result)){
     $empid = $row['prenom'];
     $empname = $row['nom'];
     $salary = $row['score'];
-    $statut = $row['statut'];
+    if ($row['statut'] == 1) {
+        $statut ='Active';
+    }else{
+        $statut = 'Inactive';
+    }
+    $login = $row['login'];
+    
 
-    $employee_arr[] = array("id" => $id,"prenom" => $empid,"nom" => $empname,"score" => $salary,"statut" => $statut);
+    $employee_arr[] = array("id" => $id,"prenom" => $empid,"nom" => $empname,"score" => $salary,"statut" => $statut,"login" => $login);
 }
 
 /* encoding array to json format */

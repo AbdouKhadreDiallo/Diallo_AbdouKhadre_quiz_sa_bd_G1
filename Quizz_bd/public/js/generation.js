@@ -1,7 +1,7 @@
 // mettre le premier select en display none
-let selectionDropdown = document.getElementById("selection-dropdown");
-let selectionOptions = selectionDropdown.getElementsByTagName("option");
-selectionOptions[0].disabled = true;
+// let selectionDropdown = document.getElementById("selection-dropdown");
+// let selectionOptions = selectionDropdown.getElementsByTagName("option");
+// selectionOptions[0].disabled = true;
 
 // generation des inputs
 
