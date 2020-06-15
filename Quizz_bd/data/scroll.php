@@ -49,15 +49,21 @@
         }
         .all{
           width: 100%;
+          margin-top: 20px;
+          margin-left: 20px;
         }
         #questionListe{
-          width: 75%;
+          width: 70%;
           float: left;
         }
         #delete{
           float: right;
           position: relative;
           top: 50%;
+        }
+        .text{
+          height: 40px;
+          width: 70%;
         }
     </style>
 <?php
@@ -72,11 +78,11 @@ $query = $conn-> query("SELECT * FROM question ORDER BY question_id ASC LIMIT ".
    ?>
    <div class="all" id=" <?php echo $row['question_id'] ?> ">
     <div id="questionListe">
-      <h3> <?php echo $row['Libelle']; ?> </h3>
+      <h3> o) <?php echo $row['Libelle']; ?> </h3>
       <?php
       foreach (explode(',', $row['reponsePossible']) as $key => $value){
-        if ($row['Type'] == 'texte') {
-          echo '<input type="text" value="',$row['bonneReponse'],'" class="text" disabled>';
+        if ($row['Type'] == 'text') {
+          echo '<input type="text" class="form-control text" value="',$row['bonneReponse'],'" disabled>';
 
         }
         elseif ($row['Type'] == 'multiple') {

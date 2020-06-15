@@ -318,7 +318,7 @@ button {
 .joueur-header-right {
     height: 200px;
     width: 100%;
-    background: #F5F5F5;
+    background: #c0c0c0;
 }
 
 .joueur-header-right-text {
@@ -544,3 +544,5 @@ th {
     position: relative;
     left: 15px;
 }
+
+

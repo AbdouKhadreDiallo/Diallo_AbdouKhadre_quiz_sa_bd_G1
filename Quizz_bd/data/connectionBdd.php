@@ -13,17 +13,23 @@ function connexion($login,$password){
         $_SESSION['statut'] = "login";
         $_SESSION['user'] = $result;
         if($result['profil'] == "admin"){
+            // $_SESSION['statut'] = "login";
             $_SESSION['user'] = $result;
             $user = "admin";
         }else{
+            $data = $bdd->query("SELECT * FROM question")->fetchAll();
+            shuffle($data);
+            $_SESSION['question'] = QuestionByGame($data);
             $user = "joueur";
         }
     }
     return $user;
 }
 function is_connect(){
-    if (!isset($_SESSION['statut'])) {
-        header("location:index.php");
+    if(isset($_SESSION['user'])){
+        return true;
+    }else{
+       return false;
     }
 }
 function deconection(){
@@ -50,8 +56,8 @@ function registerUser($prenom,$nom,$login,$profil,$password,$score = 0,$statut=1
 }
 
 function createQuestion($libelle, $nombrePoint,$questionType,$reponsePossible, $tabReponse){
-    global $conn;
-    $query = $conn->query ('INSERT INTO question (question_id,Libelle, score,Type,reponsePossible, bonneReponse) VALUES (?,?,?,?,?,?)');
+    global $bdd;
+    $query = $bdd->query ('INSERT INTO question (question_id,Libelle, score,Type,reponsePossible, bonneReponse) VALUES (?,?,?,?,?,?)');
     $result = $query->execute(array(null,$libelle,$nombrePoint,$questionType,$reponsePossible,$tabReponse));
     if ($result) {
         echo "enregistre";
@@ -92,4 +98,54 @@ function notMatch($pwd1,$pwd2){
     if ($pwd1 != $pwd2) {
         return true;
     }
+}
+
+function QuestionByGame($questions){
+    global $bdd;
+    $nombre = $bdd->query("SELECT nombreParJeu FROM nombre where id_nombre =1")->fetch();
+    $nombre = (int)$nombre[0];
+    $tab = array();
+    for ($i=0; $i <$nombre; $i++) { 
+        $tab[] = $questions[$i];
+    }
+    return $tab;
+}
+
+function score($question){
+    $score = 0;
+    $cocher= '';
+    $multiple = [];
+    $radio = '';
+    for ($i=0; $i < count($question); $i++) { 
+        if ($question[$i]['type'] == 'simple') {
+            for ($j=0; $j < count($question[$i]['reponsePossible']); $j++) { 
+                if ((!empty($question[$i]['answer'])) && in_array($j, $question[$i]['answer'])) {
+                    $cocher = $question[$i]['reponsePossible'][$j];
+                }
+            }
+            if ($cocher === $question[$i]['bonneReponse']) {
+                $score = $score + $question[$i]['score'];
+            }
+        }
+        elseif ($question[$i]['Type'] == 'text') {
+            if ((!empty($question[$i]['answer'])) && strtolower($question[$i]['answer']) === $question[$i]['bonneReponse']) 
+            {
+                $score = $score + $question[$i]['score'];
+            } 
+        }
+        else{
+            for ($j=0; $j < count($question[$i]['reponsePossible']); $j++) { 
+                if (!empty($question[$i]['answer']) && in_array('result'.$j, $question[$i]['answer'])) {
+                    $multiple[] = $question[$i]['reponsePossible'][$j];
+                }
+            }
+            if ($multiple === $question[$i]['bonneReponse']) {
+                $score = $score + $question[$i]['score'];
+            }
+            $multiple = [];
+        }
+        
+        
+    }
+    return $score;
 }

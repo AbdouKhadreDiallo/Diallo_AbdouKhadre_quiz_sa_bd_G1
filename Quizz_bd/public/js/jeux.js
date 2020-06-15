@@ -69,3 +69,21 @@ $.ajax({
         }
     }
 });
+
+var position = document.getElementById('position').value;
+var limit = document.getElementById('limit').value;
+if (position == 0) {
+    document.getElementById('prev').disabled="true";
+    document.getElementById('prev').style.backgroundColor ='#636363';
+}
+
+document.getElementById('end').style.display = "none";
+// alert(position);
+ 
+if (position == limit-1) {
+    document.getElementById('end').style.display = "inline";
+    document.getElementById('next').style.display = "none";
+}
+function showScore(){
+    document.getElementById('meilleur-score').style.display = "block"
+}

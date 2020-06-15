@@ -22,6 +22,7 @@ include('../data/connectionBdd.php');
             $tabReponse = implode(',', $tabReponse);
         } elseif ($questionType == "text") {
             $tabReponse = strtolower($reponsePossible[0]);
+            $reponsePossible = implode(',', $reponsePossible);
         } elseif ($questionType == "simple") {
             
             for ($i = 1; $i <= $n; $i++) {

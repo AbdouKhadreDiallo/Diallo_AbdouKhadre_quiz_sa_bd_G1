@@ -1,5 +1,6 @@
 <?php
-
+  define("WEBROOT","http://localhost/Quizz_bd");
+//   include './data/connectionBdd.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,7 +21,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="./public/js/script.js"></script>
-    <script src="./public/js/simple-bootstrap-paginator.js"></script>
+	<script src="./public/js/simple-bootstrap-paginator.js"></script>
+	<script src="./public/js/router.js"></script>
     <!-- <script src="./public/js/pagination.js"></script> -->
     <!-- <script src="./public/js/router.js"></script> -->
 
@@ -28,10 +30,52 @@
   </head>
   <body>
     <div class="content" id="pages">
-    <?php
-				require_once('pages/connexion.php');
-			
-			?>
+		<?php
+			if (isset($_GET['action'])) {
+				$page = $_GET['action'];
+
+				if ($page == "admin") {
+					// if (is_connect()) {
+						if (isset($_GET['page'])) {
+							$p = $_GET['page'];
+							if ($p == "showQuestion") {
+								require_once('./pages/listeQuestion.php');
+							}
+							elseif ($p == 'addAdmin') {
+								require_once('./pages/inscription.php');
+							}
+							elseif ($p == 'showPlayers') {
+								require_once('./pages/listeJoueur.php');
+							}
+							elseif ($p == 'addQuestion') {
+								require_once('./pages/creationQuestion.php');
+							}
+							elseif ($p == 'dashboard') {
+								require_once('./pages/dashboard.php');
+							}
+						}
+						else{
+							require_once('./pages/accueil.php');
+						}
+					// }
+					// else{
+					// 	require_once('./pages/connexion.php');
+					// }
+				}
+				elseif ($page == "joueur") {
+					// if (!is_connect()) {
+						require_once('./pages/jeux.php');
+					// }
+					// else{
+					// 	require_once('./pages/connexion.php');
+					// }
+					
+				}
+			}
+			else {
+				require_once('./pages/connexion.php');
+			}
+		?>
     </div>
 
     <!-- Optional JavaScript -->
@@ -39,6 +83,6 @@
     
   </body>
 </html>
-<script src="./public/js/router.js"></script>
+
 <script src="./public/js/inscription.js"></script>
 <!-- <script src="./public/js/deconnexion.js"></script> -->

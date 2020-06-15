@@ -1,5 +1,5 @@
 <?php
-include('../data/select.php');
+include('./data/select.php');
 $totalPages =sqlquery();
 var_dump($totalPages);
 ?>
@@ -25,6 +25,9 @@ var_dump($totalPages);
 /* Table rows and columns */
 #emp_table td{
     padding:10px;
+}
+th{
+    text-align: center;
 }
 #emp_table tr:nth-child(even){
     background-color:grey;

@@ -1,3 +1,4 @@
+const URL_ROOT="index.php?action";
 $(document).ready(function() {
     //alert('ok');
     $(document).on('click', '#btn-connexion', function(e) {
@@ -25,10 +26,8 @@ $(document).ready(function() {
                 }else if (response == "blocked") {
                     $('#error-3').html("ce compte est temporairement indisponible, veuillez contacter l'administrateur");
                 }
-                 else if (response == "admin") {
-                    $('#pages').load("pages/accueil.php");
-                } else {
-                    $('#pages').load("pages/jeux.php");
+                else{
+                    window.location.replace(`${URL_ROOT}=${response}`)
                 }
             }
         })

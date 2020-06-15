@@ -1,5 +1,5 @@
 <?php
-   include('../data/connectionBdd.php');
+   include('./data/connectionBdd.php');
     is_connect();
         $src = './public/images/'.$_SESSION['user']['avatar'];
 ?>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="accueil-icone"></div>
-        <a id="listeQuestion">
+        <a class="navigation-link active" lien ="index.php?action=admin&page=showQuestion">
             <div class="liens">
                 <div class="items">
                     <div class="icone-navigation"> <img src="./public/icones/ic-liste.png" alt="" srcset=""> </div>
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </a>
-        <a id="ajoutAdmin">
+        <a class="navigation-link" lien ="index.php?action=admin&page=addAdmin">
             <div class="liens">
                 <div class="items">
                     <div class="icone-navigation"> <img src="./public/icones/ic-ajout.png" alt="" srcset=""> </div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </a>
-        <a id="listeJoueur">
+        <a class="navigation-link" lien ="index.php?action=admin&page=showPlayers">
             <div class="liens">
                 <div class="items">
                     <div class="icone-navigation"> <img src="./public/icones/ic-liste.png" alt="" srcset=""> </div>
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </a>
-        <a id="ajoutQuestion">
+        <a class="navigation-link" lien ="index.php?action=admin&page=addQuestion">
             <div class="liens">
                 <div class="items">
                     <div class="icone-navigation"> <img src="./public/icones/ic-ajout.png" alt="" srcset=""> </div>
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </a>
-        <a id="dashboard">
+        <a class="navigation-link" lien ="index.php?action=admin&page=dashboard">
             <div class="liens">
                 <div class="items">
                     <div class="icone-navigation"> <img src="./public/icones/ic-liste.PNG" alt="" srcset=""> </div>
@@ -71,56 +71,19 @@
             </a>
             </div>
         </div>
-        <div class="toto"></div>
-        <?php
-
-        // if (isset($_GET['block'])) {
-        //    if ($_GET['block']=="creationadmin") {
-        //         include("./pages/inscription.php");
-        //    }
-        //    if ($_GET['block']=="listequestion") {
-        //         include("./pages/listeQuestion.php");
-        //    }
-        //    if ($_GET['block']=="listejoueur") {
-        //         include("./pages/listeJoueur.php");
-        //     }
-        //     if ($_GET['block']=="question") {
-        //         include("./pages/creationQuestion.php");
-        //     }
-        //     if ($_GET['block']=="dashboard") {
-        //         include("./pages/dashboard.php");
-        //     }
-        // }
-        // else {
-        //     include("./pages/inscription.php");
-        // }
+        <div class="toto"> <?php include 'listeQuestion.php';  ?> </div>
         
-            
-    ?>
     </div>
 </div>
 <script>
-    $(document).ready(function() {
-        $('.toto').load("http://localhost/sonatel%20Academy/Quizz_bd/pages/listeQuestion.php");
+    $(".navigation-link").on("click", function(){
+        //alert('ok');
+        $lien_encour = $(this);
+        const url = $lien_encour.attr('lien');
+        const $container = $(".toto");
+        $container.html("");
+        $container.load(`${url}`);
     })
-    $('#listeQuestion').click(function()  {
-        $('.toto').load("http://localhost/sonatel%20Academy/Quizz_bd/pages/listeQuestion.php");
-    });
-    $('#ajoutAdmin').click(function()  {
-        $('.toto').load("http://localhost/sonatel%20Academy/Quizz_bd/pages/inscription.php");
-    });
-    $('#listeJoueur').click(function()  {
-        $('.toto').load("http://localhost/sonatel%20Academy/Quizz_bd/pages/listejoueur.php");
-    });
-    $('#ajoutQuestion').click(function()  {
-        $('.toto').load("http://localhost/sonatel%20Academy/Quizz_bd/pages/creationQuestion.php");
-    });
-    $('#dashboard').click(function()  {
-        $('.toto').load("http://localhost/sonatel%20Academy/Quizz_bd/pages/dashboard.php");
-    });
-    $('#decon').click(function() {
-        $('#pages').load("http://localhost/sonatel%20Academy/Quizz_bd/pages/logout.php");
-    });
    
 </script>
 
